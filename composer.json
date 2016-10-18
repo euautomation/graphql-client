@@ -22,5 +22,15 @@
     "mockery/mockery": "~0.9"
   },
   "minimum-stability": "dev",
-  "prefer-stable": true
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "EUAutomation\\GraphQL\\": "src/"
+    }
+  },
+  "autoload-dev":{
+    "psr-4":{
+      "Tests\\": "tests/"
+    }
+  }
 }
