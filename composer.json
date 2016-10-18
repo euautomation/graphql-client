@@ -3,7 +3,7 @@
   "description": "A simple client to help execute queries and mutations across GraphQL",
   "keywords": ["graphql", "client", "php"],
   "license": "MIT",
-  "type": "package",
+  "type": "library",
   "authors": [
     {
       "name": "Carl Knowles",
