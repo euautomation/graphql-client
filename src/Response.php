@@ -22,7 +22,10 @@ class Response
      */
     public function __construct($response)
     {
-        $this->data = $response->data;
+
+        if (isset($response->data)) {
+            $this->data = $response->data;
+        }
 
         if (isset($response->errors)) {
             $this->errors = $response->errors;
