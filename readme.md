@@ -88,12 +88,12 @@ You can also set, unset or isset data on the Response class.
 
 ### Raw guzzle response
 
-Pass in your query, optional variables and headers (eg bearer token)
+Pass in your query, optional variables and headers (eg bearer token), `$variables` and `$headers` are optional
 
 `$client->raw($query, $variables, $headers);`
 
 ### Json
 
-Pass in your query, optional variables and headers (eg bearer token)
+Pass in your query, optional variables and headers (eg bearer token), `$variables` and `$headers` are optional
 
 `$client->json($query, $variables, $headers);`
