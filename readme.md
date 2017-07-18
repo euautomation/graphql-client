@@ -32,7 +32,7 @@ $client->setUrl($graphQLURL);
 
 ## Response class
 
-Pass in your query, optional variables and headers (eg bearer token)
+Pass in your query, optional variables and headers (eg bearer token), `$variables` and `$headers` are optional
 
 `$response = $client->response($query, $variables, $headers);`
 
