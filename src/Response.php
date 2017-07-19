@@ -100,4 +100,12 @@ class Response
     {
         return $this->data->{$name};
     }
+    
+    /**
+     * @param $name
+     */
+    public function __unset($name)
+    {
+        unset($this->data->{$name});
+    }
 }
