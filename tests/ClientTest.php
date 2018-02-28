@@ -75,28 +75,6 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         static::assertEquals(json_decode($data), $response);
     }
 
-    public function testClientReturnsJsonMissingDataException()
-    {
-        $data = '{}';
-
-        $stream = \Mockery::mock(\Psr\Http\Message\StreamInterface::class);
-        $stream->shouldReceive('getContents')->andReturn($data);
-
-        $responseMessage = \Mockery::mock(\Psr\Http\Message\ResponseInterface::class);
-        $responseMessage->shouldReceive('getBody')->andReturn($stream);
-
-        $guzzleClient = \Mockery::mock(\GuzzleHttp\Client::class);
-        $guzzleClient->shouldReceive('request')->andReturn($responseMessage);
-
-        $client = new Client('SomeWebsite');
-        $client->setGuzzle($guzzleClient);
-
-        static::expectException(GraphQLMissingData::class);
-        $response = $client->json('');
-
-        static::assertEquals(json_decode($data), $response);
-    }
-
     public function testClientReturnsResponse()
     {
         $data = '{"data":{"One":{"id":"1","name":"One Name","translations":[{"id":"1","code":"sv","name":"Ett Namn"},' .
