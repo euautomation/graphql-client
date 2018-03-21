@@ -3,7 +3,6 @@
 namespace EUAutomation\GraphQL;
 
 use EUAutomation\GraphQL\Exceptions\GraphQLInvalidResponse;
-use EUAutomation\GraphQL\Exceptions\GraphQLMissingData;
 
 class Client
 {
@@ -79,7 +78,6 @@ class Client
      * @return mixed
      *
      * @throws GraphQLInvalidResponse
-     * @throws GraphQLMissingData
      */
     public function json($query, $variables = [], $headers = [], $assoc = false)
     {
