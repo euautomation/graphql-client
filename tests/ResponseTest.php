@@ -117,4 +117,16 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
         static::assertTrue(isset($response->One->translations[0]->code));
         static::assertNotTrue(isset($response->Two->translations[0]->code));
     }
+
+    public function testIssetReturnsCorrectlyWithMissingField()
+    {
+        $data = '{"data":{"One":1}}';
+
+        $jsonObj = json_decode($data);
+
+        $response = new Response($jsonObj);
+
+        static::assertTrue(isset($response->One));
+        static::assertNotTrue(isset($response->Two));
+    }
 }
