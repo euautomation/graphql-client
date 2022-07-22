@@ -58,11 +58,16 @@ class Client
      */
     public function raw($query, $variables = [], $headers = [])
     {
+        $json = [
+            'query' => $query,
+        ];
+
+        if (!empty($variables)) {
+            $json['variables'] = $variables;
+        }
+
         return $this->guzzle->request('POST', $this->url, [
-            'json' => [
-                'query' => $query,
-                'variables' => $variables
-            ],
+            'json' => $json,
             'headers' => $headers
         ]);
     }
